@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dkok5sdhjduf6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 514.0
+offset_top = 232.0
+offset_right = 651.0
+offset_bottom = 272.0
+text = "Testing"
