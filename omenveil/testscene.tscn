@@ -3,8 +3,8 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 514.0
-offset_top = 232.0
-offset_right = 651.0
-offset_bottom = 272.0
+offset_left = 288.0
+offset_top = 351.0
+offset_right = 425.0
+offset_bottom = 391.0
 text = "Testing"
