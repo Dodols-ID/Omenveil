@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dymm0wp8bttxd"]
+
+[ext_resource type="Script" uid="uid://tbo1p8yvip1b" path="res://scripts/Player.cs" id="1_3vyb7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_u8vuu"]
+height = 0.673096
+radius = 0.183105
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_3vyb7")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026123, 0)
+radius = 0.176758
+height = 0.634277
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0196533, 0)
+shape = SubResource("CylinderShape3D_u8vuu")

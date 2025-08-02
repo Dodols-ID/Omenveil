@@ -1,0 +1,44 @@
+{
+    "id" : "npc_intro",
+    "lines": [
+    {
+        "type": "dialogue_text",
+        "speaker": "npc2",
+        "text": "That guy over there",
+        "next": 1
+    },
+    {
+        "type": "dialogue_text",
+        "speaker": "player",
+        "text": "Huh?",
+        "next": 2
+    },
+    {
+        "type": "dialogue_option",
+        "speaker": "npc2",
+        "text": "Are they doing the geno or pacifism kinda thing?",
+        "option": [
+            {"b_text": "You know about it?", "b_next": 3},
+            {"b_text": "Hopefully you're a psych ward.", "b_next": 5}
+        ]
+    },
+    {
+        "type": "dialogue_text",
+        "speaker": "npc2",
+        "text": "Ja, been listening to it for a couple days.",
+        "next": 4
+    },
+    {
+        "type": "dialogue_text",
+        "speaker": "npc2",
+        "text": "They surely needs therapy or something.",
+        "next": null
+    },
+    {
+        "type": "dialogue_text",
+        "speaker": "npc",
+        "text": "Unfortunately not, brother.",
+        "next": null
+    }
+    ]
+}

@@ -1,0 +1,4 @@
+[August 2, 2025] 
+Finished the majority of dialogue box simple logic.
+Bugs:
+- The "awaitingchoice" method to hold the Npc from advancing to the next index on dialogue still not working, making _npcIndialogue stays true.
