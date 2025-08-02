@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxj0ibynrt7ci"]
+
+[ext_resource type="Script" uid="uid://bqvfyum3bc6f4" path="res://script/camera_rig.gd" id="1_ktcvo"]
+[ext_resource type="PackedScene" uid="uid://sdci10cd3agc" path="res://scene/player.tscn" id="2_mfb1c"]
+[ext_resource type="PackedScene" uid="uid://fsd1wq5cc5t0" path="res://scene/npc.tscn" id="3_hxtug"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vis5a"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_se1bu"]
+sky_material = SubResource("ProceduralSkyMaterial_vis5a")
+
+[sub_resource type="Environment" id="Environment_o0hin"]
+background_mode = 2
+sky = SubResource("Sky_se1bu")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="movement_placeholder" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o0hin")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="environtment" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00317383, 0.00646973, 0.00616455)
+size = Vector3(4.01514, 0.226318, 3.98303)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99841, 0.18003, 1.20263)
+size = Vector3(0.65332, 0.124023, 0.391724)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0451304, 0.18003, 1.20263)
+size = Vector3(0.65332, 0.124023, 0.391724)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0479, 0.18003, 1.20263)
+size = Vector3(0.65332, 0.124023, 0.391724)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0479, 0.18003, 0.200293)
+size = Vector3(0.65332, 0.124023, 0.391724)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0361017, 0.18003, 0.200293)
+size = Vector3(0.65332, 0.124023, 0.391724)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04025, 0.18003, 0.200293)
+size = Vector3(0.65332, 0.124023, 0.391724)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04025, 0.18003, -0.894247)
+size = Vector3(0.65332, 0.124023, 0.391724)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0392886, 0.18003, -0.894247)
+size = Vector3(0.65332, 0.124023, 0.391724)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="environtment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08681, 0.18003, -0.894247)
+size = Vector3(0.65332, 0.124023, 0.391724)
+
+[node name="Camera Rig" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 0.999961, 0.00881389, 0, -0.00881389, 0.999961, 0, 1.19666, 3.56242)
+script = ExtResource("1_ktcvo")
+player = NodePath("../Player")
+follow_offset = Vector3(0, 1.25, 3)
+
+[node name="Camera3D" type="Camera3D" parent="Camera Rig"]
+transform = Transform3D(1, 0, 0, 0, 0.96748, 0.252948, 0, -0.252948, 0.96748, 0, -0.00492436, 0.0260346)
+
+[node name="Player" parent="." instance=ExtResource("2_mfb1c")]
+
+[node name="npc" parent="." instance=ExtResource("3_hxtug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145728, 0.327865, 1.78395)

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cdpqu8h8h85k6"]
+
+[node name="Db" type="CanvasLayer"]
+
+[node name="DialogueBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1193.0
+offset_bottom = 651.0
+
+[node name="Background" type="Panel" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 452.0
+offset_right = 1120.0
+offset_bottom = 630.0
+
+[node name="dialoguetext" type="Label" parent="DialogueBox/Background"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 1121.0
+offset_bottom = 229.0
+theme_override_font_sizes/font_size = 32
+text = "Buy Omenveil"
+
+[node name="choices" type="VBoxContainer" parent="DialogueBox/Background"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = -328.0
+offset_right = 985.0
+offset_bottom = -19.0

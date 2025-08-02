@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpeuv6x2lpp5o"]
+
+[ext_resource type="PackedScene" uid="uid://cultdy0tjpup8" path="res://scenes/npc.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dymm0wp8bttxd" path="res://scenes/player.tscn" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://bqa75vj2dte3h" path="res://scripts/Camerarig.cs" id="3_sugp2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_o5qli"]
+sky_material = SubResource("ProceduralSkyMaterial_sgp6g")
+
+[sub_resource type="Environment" id="Environment_0wfyh"]
+background_mode = 2
+sky = SubResource("Sky_o5qli")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0wfyh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="platform" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00163269, -0.15271, 0.00598145)
+use_collision = true
+size = Vector3(7.90573, 0.259521, 3.96802)
+
+[node name="npc" parent="." instance=ExtResource("1_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.19345, 0.441901, -0.591175)
+iconPath = "res://assets/pepe.jpeg"
+dialoguePath = "res://scripts/dialogue/dialogue1.json"
+
+[node name="player" parent="." instance=ExtResource("2_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8814, 0.577147, 0.149597)
+
+[node name="camerarig" type="Node3D" parent="." node_paths=PackedStringArray("Player")]
+script = ExtResource("3_sugp2")
+Player = NodePath("../player")
+FollowOffset = Vector3(0, 0, 0.5)
+
+[node name="Camera3D" type="Camera3D" parent="camerarig"]
+transform = Transform3D(1, 0, 0, 0, 0.994939, 0.100483, 0, -0.100483, 0.994939, 0, 1.35672, 2.72469)
+
+[node name="npc2" parent="." instance=ExtResource("1_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95374, 0.353482, 0.692382)
+iconPath = "res://assets/icon2.png"
+dialoguePath = "res://scripts/dialogue/dialgue2.json"

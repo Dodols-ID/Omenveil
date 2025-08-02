@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://fsd1wq5cc5t0"]
+
+[ext_resource type="Script" uid="uid://da0kddcq6ciky" path="res://script/npc.gd" id="1_54ctn"]
+[ext_resource type="Texture2D" uid="uid://dw1gjiplcaupb" path="res://asset/pepe.jpeg" id="2_ab2no"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_njf6t"]
+height = 0.443115
+radius = 0.0761719
+
+[node name="npc" type="Node3D"]
+script = ExtResource("1_54ctn")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.170309, 0)
+radius = 0.0665311
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0241376, -0.00175324)
+radius = 0.0629883
+height = 0.282166
+
+[node name="InteractionIcon" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionIcon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0269775, 0)
+shape = SubResource("CylinderShape3D_njf6t")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="Icon" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.398148, 0)
+visible = false
+texture = ExtResource("2_ab2no")

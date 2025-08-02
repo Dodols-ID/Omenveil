@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cultdy0tjpup8"]
+
+[ext_resource type="Script" uid="uid://cd3fy77gx01sx" path="res://scripts/Npc.cs" id="1_abqhh"]
+[ext_resource type="Texture2D" uid="uid://70veiodoytp3" path="res://assets/pepe.jpeg" id="2_rv78h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tcuxl"]
+size = Vector3(0.437988, 0.934814, 0.392212)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7n8xq"]
+size = Vector3(0.58606, 0.891113, 0.554932)
+
+[node name="npc" type="StaticBody3D" node_paths=PackedStringArray("Icon")]
+script = ExtResource("1_abqhh")
+Icon = NodePath("Icon")
+
+[node name="npc_collisionshape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00317383, 0.085083, -0.00994873)
+shape = SubResource("BoxShape3D_tcuxl")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0948486, 0)
+radius = 0.189453
+height = 0.575439
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.411867, 0)
+radius = 0.150364
+
+[node name="npc_interactionarea" type="Area3D" parent="."]
+
+[node name="npc_interactcol" type="CollisionShape3D" parent="npc_interactionarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0.0544434, -0.00695801)
+shape = SubResource("BoxShape3D_7n8xq")
+
+[node name="Icon" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.908374, 0)
+visible = false
+texture = ExtResource("2_rv78h")

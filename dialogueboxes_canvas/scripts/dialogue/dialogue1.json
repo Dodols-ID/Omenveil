@@ -1,0 +1,38 @@
+{
+    "id" : "npc_intro",
+    "lines": [
+    {
+        "type": "dialogue_text",
+        "speaker": "npc",
+        "text": "How's it going?",
+        "next": 1
+    },
+    {
+        "type": "dialogue_text",
+        "speaker": "player",
+        "text": "It's...",
+        "next": 2
+    },
+    {
+        "type": "dialogue_option",
+        "speaker": "npc",
+        "text": "Blood for the Blood God, or mercy forever?",
+        "option": [
+            {"b_text": "Everyone born to die.", "b_next": 3},
+            {"b_text": "It's time for you to die.", "b_next": 4}
+        ]
+    },
+    {
+        "type": "dialogue_text",
+        "speaker": "npc",
+        "text": "There you go.",
+        "next": null
+    },
+    {
+        "type": "dialogue_text",
+        "speaker": "npc",
+        "text": "Oh my.",
+        "next": null
+    }
+    ]
+}
