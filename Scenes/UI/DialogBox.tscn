@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://ki6esl6u04gh"]
+
+[ext_resource type="Texture2D" uid="uid://doa5oyxoko53p" path="res://Assets/Models/contohPotraitDialog.png" id="1_dh506"]
+[ext_resource type="FontFile" uid="uid://cx8toe0673mur" path="res://Assets/Fonts/VT323-Regular.ttf" id="1_uql0l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyb0n"]
+bg_color = Color(0, 0, 0, 0.588235)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PotraitBox" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -510.0
+offset_right = 400.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="Potrait" type="HBoxContainer" parent="PotraitBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.5
+offset_top = -213.5
+offset_right = 141.5
+offset_bottom = 213.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterPotrait" type="TextureRect" parent="PotraitBox/Potrait"]
+layout_mode = 2
+texture = ExtResource("1_dh506")
+
+[node name="DialogBox" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1510.0
+offset_top = -310.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hyb0n")
+
+[node name="CharacterNameLabel" type="Label" parent="DialogBox"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = -130.0
+offset_right = 200.0
+offset_bottom = -20.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_uql0l")
+theme_override_font_sizes/font_size = 90
+text = "Alya"
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DialogVBox" type="VBoxContainer" parent="DialogBox/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DialogText" type="RichTextLabel" parent="DialogBox/MarginContainer/DialogVBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/normal_font = ExtResource("1_uql0l")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Tes tes 1 2 3... pagar"
+fit_content = true
+horizontal_alignment = 1

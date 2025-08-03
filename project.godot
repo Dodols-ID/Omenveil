@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="The Program"
+run/main_scene="uid://ki6esl6u04gh"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="res://icon.svg"
+run/size/viewport_height=1080
+run/size/viewport_width=1920
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="The Program"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
